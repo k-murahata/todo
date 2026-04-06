@@ -1,6 +1,0 @@
-com\example\controller\TodoController.class
-com\example\model\TodoDto.class
-com\example\repository\TodoRepository.class
-com\example\TodoApplication.class
-com\example\service\TodoService.class
-com\example\Todo.class
