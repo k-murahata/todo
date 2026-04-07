@@ -20,16 +20,18 @@ public class Todo {
     private String title;
     private String description;
     private boolean completed;
+    private String priority;
 
     // Default constructor
     public Todo() {
     }
 
     // Constructor with parameters
-    public Todo(String title, String description, boolean completed) {
+    public Todo(String title, String description, boolean completed, String priority) {
         this.title = title;
         this.description = description;
         this.completed = completed;
+        this.priority = priority;
     }
 
     // Getters and Setters
@@ -65,6 +67,14 @@ public class Todo {
         this.completed = completed;
     }
 
+    public String getPriority() {
+        return priority;
+    }
+
+    public void setPriority(String priority) {
+        this.priority = priority;
+    }
+
     @Override
     public String toString() {
         return "Todo{" +
@@ -72,6 +82,7 @@ public class Todo {
                 ", title='" + title + '\'' +
                 ", description='" + description + '\'' +
                 ", completed=" + completed +
+                ", priority='" + priority + '\'' +
                 '}';
     }
 }

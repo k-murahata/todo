@@ -15,6 +15,7 @@ import java.util.Optional;
 /**
  * REST Controller for Todo operations.
  */
+@CrossOrigin(origins = "https://todo-frontend-293g.onrender.com")
 @RestController
 @RequestMapping("/api/todos")
 @Tag(name = "Todo API", description = "API for managing todos")

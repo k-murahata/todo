@@ -90,7 +90,7 @@ public class TodoService {
      * @return TodoDto
      */
     private TodoDto convertToDto(Todo todo) {
-        return new TodoDto(todo.getId(), todo.getTitle(), todo.getDescription(), todo.isCompleted());
+        return new TodoDto(todo.getId(), todo.getTitle(), todo.getDescription(), todo.isCompleted(), todo.getPriority());
     }
 
     /**
@@ -100,6 +100,6 @@ public class TodoService {
      * @return Todo
      */
     private Todo convertToEntity(TodoDto todoDto) {
-        return new Todo(todoDto.getTitle(), todoDto.getDescription(), todoDto.isCompleted());
+        return new Todo(todoDto.getTitle(), todoDto.getDescription(), todoDto.isCompleted(), todoDto.getPriority());
     }
 }

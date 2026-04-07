@@ -9,17 +9,19 @@ public class TodoDto {
     private String title;
     private String description;
     private boolean completed;
+    private String priority;
 
     // Default constructor
     public TodoDto() {
     }
 
     // Constructor with parameters
-    public TodoDto(Long id, String title, String description, boolean completed) {
+    public TodoDto(Long id, String title, String description, boolean completed, String priority) {
         this.id = id;
         this.title = title;
         this.description = description;
         this.completed = completed;
+        this.priority = priority;
     }
 
     // Getters and Setters
@@ -53,5 +55,13 @@ public class TodoDto {
 
     public void setCompleted(boolean completed) {
         this.completed = completed;
+    }
+
+    public String getPriority() {
+        return priority;
+    }
+
+    public void setPriority(String priority) {
+        this.priority = priority;
     }
 }
