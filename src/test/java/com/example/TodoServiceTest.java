@@ -36,9 +36,9 @@ class TodoServiceTest {
     @Test
     void testGetAllTodos() {
         // Given
-        Todo todo1 = new Todo("Title1", "Description1", false);
+        Todo todo1 = new Todo("Title1", "Description1", false, "medium");
         todo1.setId(1L);
-        Todo todo2 = new Todo("Title2", "Description2", true);
+        Todo todo2 = new Todo("Title2", "Description2", true, "low");
         todo2.setId(2L);
         when(todoRepository.findAll()).thenReturn(Arrays.asList(todo1, todo2));
 
@@ -55,7 +55,7 @@ class TodoServiceTest {
     @Test
     void testGetTodoById() {
         // Given
-        Todo todo = new Todo("Title", "Description", false);
+        Todo todo = new Todo("Title", "Description", false, "medium");
         todo.setId(1L);
         when(todoRepository.findById(1L)).thenReturn(Optional.of(todo));
 
@@ -71,8 +71,8 @@ class TodoServiceTest {
     @Test
     void testCreateTodo() {
         // Given
-        TodoDto todoDto = new TodoDto(null, "New Title", "New Description", false);
-        Todo savedTodo = new Todo("New Title", "New Description", false);
+        TodoDto todoDto = new TodoDto(null, "New Title", "New Description", false, "medium");
+        Todo savedTodo = new Todo("New Title", "New Description", false, "medium");
         savedTodo.setId(1L);
         when(todoRepository.save(any(Todo.class))).thenReturn(savedTodo);
 
@@ -88,8 +88,8 @@ class TodoServiceTest {
     @Test
     void testUpdateTodo() {
         // Given
-        TodoDto todoDto = new TodoDto(null, "Updated Title", "Updated Description", true);
-        Todo updatedTodo = new Todo("Updated Title", "Updated Description", true);
+        TodoDto todoDto = new TodoDto(null, "Updated Title", "Updated Description", true, "high");
+        Todo updatedTodo = new Todo("Updated Title", "Updated Description", true, "high");
         updatedTodo.setId(1L);
         when(todoRepository.existsById(1L)).thenReturn(true);
         when(todoRepository.save(any(Todo.class))).thenReturn(updatedTodo);
